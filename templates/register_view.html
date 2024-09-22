@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block content %}
+<div>{% include "components/header.html" %}</div>
+<div>{{error}}</div>
+<div class="px-20 font-medium leading-6 text-gray-600 text-xl">
+  Register User And Vehicle Here
+</div>
+
+<form class="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="flex w-full mx-auto space-x-20 px-20 mt-10">
+    <div class="w-full">
+      <div>
+        <h2 class="block mb-5 text-lg font-medium text-gray-900">
+          Owner Information
+        </h2>
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_first_name"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >First Name</label
+        >
+        {{form.first_name}}
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_last_name"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Last Name</label
+        >
+        {{form.last_name}}
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_email"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Email</label
+        >
+        {{form.email}}
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_phone_number"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Phone Number</label
+        >
+        {{form.phone_number}}
+      </div>
+      <div class="mb-5">
+        <label
+          class="block mb-2 text-sm font-medium text-gray-900"
+          for="id_profile_photo"
+          >Profile Image</label
+        >
+        {{form.profile_photo}}
+      </div>
+    </div>
+    <div class="w-full">
+      <div>
+        <h2 class="block mb-5 text-lg font-medium text-gray-900">
+          Vehicle Information
+        </h2>
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_make"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Make</label
+        >
+        {{form.make}}
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_model"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Model</label
+        >
+        {{form.model}}
+      </div>
+      <div class="mb-5">
+        <label
+          for="id_license_plate"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >License Plate</label
+        >
+        {{form.license_plate}}
+      </div>
+      <div class="mb-5">
+        <label
+          class="block mb-2 text-sm font-medium text-gray-900"
+          for="id_photo"
+          >Vehicle Image</label
+        >
+        {{form.photo}}
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}

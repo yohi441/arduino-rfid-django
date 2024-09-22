@@ -1,0 +1,9 @@
+<button
+  id="check"
+  hx-get="{% url 'status' data %}"
+  hx-trigger="click"
+  hx-swap-oob="true"
+  hx-swap="outerHTML"
+>
+  {{data}} check status check partial
+</button>

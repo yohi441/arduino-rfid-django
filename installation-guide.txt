@@ -1,0 +1,6 @@
+install dependency using requirements.txt
+python version 3.12.6
+
+npm version v20.17.0
+
+npm install

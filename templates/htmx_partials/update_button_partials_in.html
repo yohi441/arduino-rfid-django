@@ -1,0 +1,45 @@
+<div
+  x-data="{ status: '{{ car.vehicle_status }}' }"
+  class="ml-4 flex justify-center mt-20 w-3/4"
+  id="status-button"
+>
+  <button
+    :class="{'cursor-not-allowed opacity-50': status=='in'}"
+    hx-get="{% url 'update-status' 'in' car.pk %}"
+    hx-swap="outerHTML"
+    type="button"
+    hx-target="#status-button"
+    :disabled="status=='in'"
+    class="w-1/2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-10 py-5 me-2 mb-2"
+  >
+    In
+  </button>
+  <button
+    :class="{'cursor-not-allowed opacity-50': status==='out'}"
+    type="button"
+    hx-swap="outerHTML"
+    hx-target="#status-button"
+    hx-get="{% url 'update-status' 'out' car.pk %}"
+    :disabled="status=='out'"
+    class="w-1/2 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-10 py-5 me-2 mb-2"
+  >
+    Out
+  </button>
+</div>
+
+<div
+  class="inline-flex items-center text-base font-semibold text-gray-900"
+  id="status-badge"
+  hx-swap-oob="true"
+>
+  {% if car.vehicle_status|title == 'Out' %}
+  <span
+    class="bg-red-300 text-red-800 text-base font-medium me-2 px-4 py-2 rounded-full"
+    >{{car.vehicle_status|title}}</span
+  >
+  {% else %}<span
+    class="bg-green-300 text-green-800 text-base font-medium me-2 px-4 py-2 rounded-full"
+    >{{car.vehicle_status|title}}</span
+  >
+  {% endif %}
+</div>

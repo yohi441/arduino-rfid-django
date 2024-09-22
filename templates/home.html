@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<div>
+  {% include "components/header.html" %}
+  <div>
+    <form>
+      <label for="choices">Choose serial port:</label>
+      <select id="choices" name="choices">
+        <option value="" disabled selected>Select a port</option>
+
+        {% for value in list_of_ports %}
+        <option value="{{value.port}}">{{ value.description }}</option>
+        {% endfor %}
+      </select>
+    </form>
+  </div>
+  <div
+    hx-get="{% url 'get-rfid-home' %}"
+    hx-trigger="every 1s"
+    hx-swap="outerHTML"
+  >
+    <a href="{% url 'vehicle-detail-view' data=data%}" class="text-amber-500">
+      check status
+    </a>
+  </div>
+</div>
+
+{% endblock content %}

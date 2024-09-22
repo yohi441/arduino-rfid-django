@@ -1,0 +1,56 @@
+{% load static %} {% load django_htmx %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% comment %}
+    <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+    {% endcomment %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{% static 'css/scan_loader.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/flowbite.min.js'%}"></script>
+  </head>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+  <body>
+    <div class="container max-w-7xl mx-auto">
+      <div x-data="{ showMessage: true }">
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li
+            x-show="showMessage"
+            x-init="setTimeout(() => { showMessage = false }, 2000)"
+            {%
+            if
+            message.tags
+            %}
+            class="{{ message.tags }}"
+            {%
+            endif
+            %}
+          >
+            <div
+              class="p-4 mb-4 text-sm mt-3 text-green-800 rounded-lg bg-green-200"
+              role="alert"
+            >
+              <span class="font-medium">Success!</span> {{ message }}
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% block content %} {% endblock %}
+    </div>
+
+    <script src="{% static 'js/htmx.min.js' %}" defer></script>
+    <script src="{% static 'js/alpine.min.js' %}" defer></script>
+    {% django_htmx_script %}
+  </body>
+</html>

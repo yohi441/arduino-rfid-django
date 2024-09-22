@@ -1,0 +1,169 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div>{% include "components/header.html" %}</div>
+<div class="w-full mt-20">
+  <div class="flex border-3 w-full justify-between px-40">
+    <div class="w-full">
+      <div
+        class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow"
+      >
+        <div class="flex flex-col items-center pb-10 mt-10">
+          {% if owner.profile_photo|title %}
+          <img
+            class="w-24 h-24 mb-3 rounded-full shadow-lg"
+            src="{{ owner.profile_photo.url }}"
+            alt="profile photo"
+          />
+          {% else %}
+          <img
+            class="w-24 h-24 mb-3 rounded-full shadow-lg"
+            src="{% static 'images/default_img.jpg'%}"
+            alt="Bonnie image"
+          />
+          {% endif %}
+          <h5 class="mb-1 text-xl font-medium text-gray-900">
+            {{owner.first_name}} {{owner.last_name}}
+          </h5>
+          <span class="text-sm text-gray-500">Email: {{owner.email}}</span>
+          <span class="text-sm text-gray-500"
+            >Phone number: {{owner.phone_number|title}}</span
+          >
+        </div>
+      </div>
+      <div
+        x-data="{ status: '{{ car.vehicle_status }}' }"
+        class="ml-4 flex justify-center mt-20 w-3/4"
+        id="status-button"
+      >
+        <button
+          :class="{'cursor-not-allowed opacity-50': status=='in'}"
+          hx-get="{% url 'update-status' 'in' car.pk %}"
+          hx-swap="outerHTML"
+          type="button"
+          hx-target="#status-button"
+          :disabled="status=='in'"
+          class="w-1/2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-10 py-5 me-2 mb-2"
+        >
+          In
+        </button>
+        <button
+          :class="{'cursor-not-allowed opacity-50': status==='out'}"
+          type="button"
+          hx-swap="outerHTML"
+          hx-target="#status-button"
+          hx-get="{% url 'update-status' 'out' car.pk %}"
+          :disabled="status=='out'"
+          class="w-1/2 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-10 py-5 me-2 mb-2"
+        >
+          Out
+        </button>
+      </div>
+    </div>
+    <div class="w-full">
+      <div
+        class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8"
+      >
+        <div class="flex justify-center">
+          <div>
+            {% if car.photo %}
+            <img
+              class="w-36 h-36 mb-3 shadow-lg"
+              src="{{ car.photo.url }}"
+              alt="profile photo"
+            />
+            {% else %}
+            <img
+              class="w-36 h-36 mb-3 shadow-lg"
+              src="{% static 'images/default_img.jpg'%}"
+              alt="Bonnie image"
+            />
+          </div>
+          {% endif %}
+        </div>
+        <div class="flow-root">
+          <ul role="list" class="divide-y divide-gray-200">
+            <li class="py-3 sm:py-4">
+              <div class="flex items-center">
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate">Make</p>
+                </div>
+                <div
+                  class="inline-flex items-center text-base font-semibold text-gray-900"
+                >
+                  {{car.make|title}}
+                </div>
+              </div>
+            </li>
+            <li class="py-3 sm:py-4">
+              <div class="flex items-center">
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate">
+                    Model
+                  </p>
+                </div>
+                <div
+                  class="inline-flex items-center text-base font-semibold text-gray-900"
+                >
+                  {{car.model|title}}
+                </div>
+              </div>
+            </li>
+            <li class="py-3 sm:py-4">
+              <div class="flex items-center">
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate">
+                    License Plate
+                  </p>
+                </div>
+                <div
+                  class="inline-flex items-center text-base font-semibold text-gray-900"
+                >
+                  {{car.license_plate|title}}
+                </div>
+              </div>
+            </li>
+            <li class="py-3 sm:py-4">
+              <div class="flex items-center">
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate">
+                    Color
+                  </p>
+                </div>
+                <div
+                  class="inline-flex items-center text-base font-semibold text-gray-900"
+                >
+                  {{car.color|title}}
+                </div>
+              </div>
+            </li>
+            <li class="pt-3 pb-0 sm:pt-4">
+              <div class="flex items-center">
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate">
+                    Vehicle Status
+                  </p>
+                </div>
+                <div
+                  class="inline-flex items-center text-base font-semibold text-gray-900"
+                  id="status-badge"
+                  hx-swap-oob="true"
+                >
+                  {% if car.vehicle_status|title == 'Out' %}
+                  <span
+                    class="bg-red-300 text-red-800 text-base font-medium me-2 px-4 py-2 rounded-full"
+                    >{{car.vehicle_status|title}}</span
+                  >
+                  {% else %}<span
+                    class="bg-green-300 text-green-800 text-base font-medium me-2 px-4 py-2 rounded-full"
+                    >{{car.vehicle_status|title}}</span
+                  >
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

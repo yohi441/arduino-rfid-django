@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block content %}
+<div>{% include "components/header.html" %}</div>
+<div>
+  <form class="max-w-sm mx-auto" id="portForm" method="post">
+    {% csrf_token %}
+    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900"
+      >Choose USB Port Of Your Scanner</label
+    >
+    <select
+      id="ports"
+      name="selected_port"
+      onchange="document.getElementById('portForm').submit()"
+      x-data="{selectedValue: '{{ current_port }}'}"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    >
+      {% for port in list_of_ports %}
+      <option
+        x-bind:selected="selectedValue === '{{ port.port }}'"
+        value="{{ port.port }}"
+      >
+        {{ port.description }}
+      </option>
+      {% endfor %}
+    </select>
+  </form>
+  <div class="text-center mt-10 font-medium text-gray-600 text-xl">
+    <h2>Register your RFID</h2>
+  </div>
+  <div
+    hx-get="{% url 'get-rfid' %}"
+    hx-trigger="every 1s"
+    hx-swap="outerHTML"
+  ></div>
+  <div class="flex items-center justify-center mt-20 font-medium text-gray-600">
+    <h3>Ready to scan the rfid</h3>
+  </div>
+  <div class="mx-auto border-3 mt-10 rounded h-72 w-64 flex bg-gray-900">
+    <span class="scan-loader mt-10 left-[123px] top-[100px]"></span>
+  </div>
+  {% endblock content %}
+</div>

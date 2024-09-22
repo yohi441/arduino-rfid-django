@@ -1,0 +1,1452 @@
+[
+    {
+        "model": "core.owner",
+        "pk": 1,
+        "fields": {
+            "rfid": "RFID0001",
+            "first_name": "Christopher",
+            "last_name": "Walls",
+            "email": "taylorwilliam@example.org",
+            "phone_number": "900-763-2204x596"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 2,
+        "fields": {
+            "rfid": "RFID0002",
+            "first_name": "Sarah",
+            "last_name": "Gomez",
+            "email": "andersenvalerie@example.net",
+            "phone_number": "001-440-472-8691x59264"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 3,
+        "fields": {
+            "rfid": "RFID0003",
+            "first_name": "Lynn",
+            "last_name": "Mason",
+            "email": "jwalters@example.net",
+            "phone_number": "001-418-456-1130x9102"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 4,
+        "fields": {
+            "rfid": "RFID0004",
+            "first_name": "Jeremy",
+            "last_name": "Lewis",
+            "email": "pbarnes@example.com",
+            "phone_number": "4415334564"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 5,
+        "fields": {
+            "rfid": "RFID0005",
+            "first_name": "Meghan",
+            "last_name": "Gray",
+            "email": "erika50@example.org",
+            "phone_number": "(504)834-8657x48916"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 6,
+        "fields": {
+            "rfid": "RFID0006",
+            "first_name": "Erica",
+            "last_name": "Young",
+            "email": "smithjustin@example.org",
+            "phone_number": "+1-585-573-5236x907"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 7,
+        "fields": {
+            "rfid": "RFID0007",
+            "first_name": "Gabrielle",
+            "last_name": "Alexander",
+            "email": "timothythompson@example.com",
+            "phone_number": "(892)669-4047x927"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 8,
+        "fields": {
+            "rfid": "RFID0008",
+            "first_name": "Alejandro",
+            "last_name": "Allison",
+            "email": "ltorres@example.net",
+            "phone_number": "302-936-8504"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 9,
+        "fields": {
+            "rfid": "RFID0009",
+            "first_name": "Jeffrey",
+            "last_name": "Cross",
+            "email": "richardcastro@example.org",
+            "phone_number": "(892)722-2361"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 10,
+        "fields": {
+            "rfid": "RFID0010",
+            "first_name": "Ashley",
+            "last_name": "Hensley",
+            "email": "tmcclure@example.net",
+            "phone_number": "982.966.1237"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 11,
+        "fields": {
+            "rfid": "RFID0011",
+            "first_name": "Gregory",
+            "last_name": "Casey",
+            "email": "brittanyherman@example.com",
+            "phone_number": "001-689-498-6292x9708"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 12,
+        "fields": {
+            "rfid": "RFID0012",
+            "first_name": "Wanda",
+            "last_name": "Chang",
+            "email": "rturner@example.org",
+            "phone_number": "766.736.1828x07638"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 13,
+        "fields": {
+            "rfid": "RFID0013",
+            "first_name": "Christina",
+            "last_name": "Maldonado",
+            "email": "wademelissa@example.com",
+            "phone_number": "+1-206-357-7547x95935"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 14,
+        "fields": {
+            "rfid": "RFID0014",
+            "first_name": "Bryan",
+            "last_name": "Meadows",
+            "email": "gregory99@example.net",
+            "phone_number": "001-799-580-2431x71528"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 15,
+        "fields": {
+            "rfid": "RFID0015",
+            "first_name": "Kim",
+            "last_name": "Frazier",
+            "email": "christopher85@example.com",
+            "phone_number": "512-815-2466x28405"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 16,
+        "fields": {
+            "rfid": "RFID0016",
+            "first_name": "Alex",
+            "last_name": "Castillo",
+            "email": "gregoryjuarez@example.com",
+            "phone_number": "507.626.9614x462"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 17,
+        "fields": {
+            "rfid": "RFID0017",
+            "first_name": "Nicole",
+            "last_name": "Wade",
+            "email": "joanna31@example.org",
+            "phone_number": "726.282.6587"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 18,
+        "fields": {
+            "rfid": "RFID0018",
+            "first_name": "Anita",
+            "last_name": "Chang",
+            "email": "flowe@example.net",
+            "phone_number": "(944)254-1792"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 19,
+        "fields": {
+            "rfid": "RFID0019",
+            "first_name": "Lisa",
+            "last_name": "Clark",
+            "email": "brianrhodes@example.com",
+            "phone_number": "+1-782-587-1087x54248"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 20,
+        "fields": {
+            "rfid": "RFID0020",
+            "first_name": "Cathy",
+            "last_name": "Stone",
+            "email": "orose@example.org",
+            "phone_number": "001-285-508-8679"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 21,
+        "fields": {
+            "rfid": "RFID0021",
+            "first_name": "Travis",
+            "last_name": "Barber",
+            "email": "kevinwong@example.net",
+            "phone_number": "(373)704-6629"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 22,
+        "fields": {
+            "rfid": "RFID0022",
+            "first_name": "Emily",
+            "last_name": "Kim",
+            "email": "katiecarroll@example.com",
+            "phone_number": "(690)284-5498"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 23,
+        "fields": {
+            "rfid": "RFID0023",
+            "first_name": "Dale",
+            "last_name": "Bailey",
+            "email": "christopher22@example.com",
+            "phone_number": "(985)356-8881"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 24,
+        "fields": {
+            "rfid": "RFID0024",
+            "first_name": "Monica",
+            "last_name": "Watkins",
+            "email": "jonathan37@example.net",
+            "phone_number": "(339)709-5645"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 25,
+        "fields": {
+            "rfid": "RFID0025",
+            "first_name": "Jill",
+            "last_name": "Pineda",
+            "email": "ashaw@example.net",
+            "phone_number": "+1-507-546-2041x088"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 26,
+        "fields": {
+            "rfid": "RFID0026",
+            "first_name": "Tonya",
+            "last_name": "Horne",
+            "email": "daniel16@example.org",
+            "phone_number": "+1-841-806-9598x9248"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 27,
+        "fields": {
+            "rfid": "RFID0027",
+            "first_name": "Miranda",
+            "last_name": "Bender",
+            "email": "davidsonpatrick@example.com",
+            "phone_number": "2007781725"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 28,
+        "fields": {
+            "rfid": "RFID0028",
+            "first_name": "David",
+            "last_name": "Thornton",
+            "email": "sullivandaniel@example.org",
+            "phone_number": "+1-950-361-3434x79416"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 29,
+        "fields": {
+            "rfid": "RFID0029",
+            "first_name": "Rose",
+            "last_name": "Arnold",
+            "email": "vhernandez@example.net",
+            "phone_number": "+1-974-783-0130x919"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 30,
+        "fields": {
+            "rfid": "RFID0030",
+            "first_name": "Miguel",
+            "last_name": "Torres",
+            "email": "martinmichael@example.org",
+            "phone_number": "695-710-5375"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 31,
+        "fields": {
+            "rfid": "RFID0031",
+            "first_name": "Stephanie",
+            "last_name": "Bell",
+            "email": "derrickjohnson@example.net",
+            "phone_number": "3892510389"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 32,
+        "fields": {
+            "rfid": "RFID0032",
+            "first_name": "Kenneth",
+            "last_name": "Estrada",
+            "email": "aweiss@example.org",
+            "phone_number": "+1-840-252-5910x83370"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 33,
+        "fields": {
+            "rfid": "RFID0033",
+            "first_name": "Angela",
+            "last_name": "Rivera",
+            "email": "matthewgray@example.org",
+            "phone_number": "510.654.4682"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 34,
+        "fields": {
+            "rfid": "RFID0034",
+            "first_name": "Nathan",
+            "last_name": "Leach",
+            "email": "bakerjames@example.org",
+            "phone_number": "566.583.2354"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 35,
+        "fields": {
+            "rfid": "RFID0035",
+            "first_name": "Christopher",
+            "last_name": "James",
+            "email": "bharvey@example.com",
+            "phone_number": "402-243-5991"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 36,
+        "fields": {
+            "rfid": "RFID0036",
+            "first_name": "Kristy",
+            "last_name": "White",
+            "email": "leelaura@example.net",
+            "phone_number": "001-489-868-2198x8295"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 37,
+        "fields": {
+            "rfid": "RFID0037",
+            "first_name": "Matthew",
+            "last_name": "Johnson",
+            "email": "joshuajefferson@example.org",
+            "phone_number": "(295)352-5100"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 38,
+        "fields": {
+            "rfid": "RFID0038",
+            "first_name": "Chad",
+            "last_name": "Abbott",
+            "email": "ginagrant@example.com",
+            "phone_number": "+1-821-239-6093x8747"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 39,
+        "fields": {
+            "rfid": "RFID0039",
+            "first_name": "Elizabeth",
+            "last_name": "Obrien",
+            "email": "lindsay98@example.org",
+            "phone_number": "+1-913-304-7367x30801"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 40,
+        "fields": {
+            "rfid": "RFID0040",
+            "first_name": "April",
+            "last_name": "Pena",
+            "email": "watsonsamantha@example.org",
+            "phone_number": "(403)470-2143x9564"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 41,
+        "fields": {
+            "rfid": "RFID0041",
+            "first_name": "Ashley",
+            "last_name": "Cowan",
+            "email": "navarrothomas@example.org",
+            "phone_number": "591-793-4545x4437"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 42,
+        "fields": {
+            "rfid": "RFID0042",
+            "first_name": "Marcus",
+            "last_name": "Montgomery",
+            "email": "bramos@example.com",
+            "phone_number": "001-558-315-0286x9727"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 43,
+        "fields": {
+            "rfid": "RFID0043",
+            "first_name": "Barbara",
+            "last_name": "Landry",
+            "email": "richard58@example.com",
+            "phone_number": "+1-850-765-3666x7816"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 44,
+        "fields": {
+            "rfid": "RFID0044",
+            "first_name": "Sharon",
+            "last_name": "Walker",
+            "email": "ashley90@example.org",
+            "phone_number": "(647)978-5416x4659"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 45,
+        "fields": {
+            "rfid": "RFID0045",
+            "first_name": "Roy",
+            "last_name": "Herman",
+            "email": "nicolebecker@example.org",
+            "phone_number": "+1-469-994-3330x1470"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 46,
+        "fields": {
+            "rfid": "RFID0046",
+            "first_name": "Shawn",
+            "last_name": "Perkins",
+            "email": "schneiderandrea@example.net",
+            "phone_number": "842-336-7089x38847"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 47,
+        "fields": {
+            "rfid": "RFID0047",
+            "first_name": "Gina",
+            "last_name": "Gray",
+            "email": "johnnymcgrath@example.com",
+            "phone_number": "001-992-880-8869x259"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 48,
+        "fields": {
+            "rfid": "RFID0048",
+            "first_name": "Andrea",
+            "last_name": "Colon",
+            "email": "rowewhitney@example.com",
+            "phone_number": "(775)655-4856x09870"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 49,
+        "fields": {
+            "rfid": "RFID0049",
+            "first_name": "Bonnie",
+            "last_name": "Hart",
+            "email": "gerald08@example.com",
+            "phone_number": "770.755.4396x0076"
+        }
+    },
+    {
+        "model": "core.owner",
+        "pk": 50,
+        "fields": {
+            "rfid": "RFID0050",
+            "first_name": "Justin",
+            "last_name": "Bowers",
+            "email": "wwhite@example.net",
+            "phone_number": "258.866.6179x768"
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 1,
+        "fields": {
+            "owner": 1,
+            "make": "Campbell Inc",
+            "model": "become",
+            "license_plate": "ZCC 029",
+            "vehicle_status": 1
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 2,
+        "fields": {
+            "owner": 2,
+            "make": "Smith PLC",
+            "model": "recognize",
+            "license_plate": "AIE-827",
+            "vehicle_status": 2
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 3,
+        "fields": {
+            "owner": 3,
+            "make": "Mccoy Group",
+            "model": "service",
+            "license_plate": "801UNE",
+            "vehicle_status": 3
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 4,
+        "fields": {
+            "owner": 4,
+            "make": "Ward, Camacho and Stephens",
+            "model": "place",
+            "license_plate": "1LP3434",
+            "vehicle_status": 4
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 5,
+        "fields": {
+            "owner": 5,
+            "make": "Phillips Ltd",
+            "model": "join",
+            "license_plate": "8FH X49",
+            "vehicle_status": 5
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 6,
+        "fields": {
+            "owner": 6,
+            "make": "Bennett Inc",
+            "model": "because",
+            "license_plate": "84RH6",
+            "vehicle_status": 6
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 7,
+        "fields": {
+            "owner": 7,
+            "make": "Horn-Taylor",
+            "model": "minute",
+            "license_plate": "BCJ Y30",
+            "vehicle_status": 7
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 8,
+        "fields": {
+            "owner": 8,
+            "make": "Anderson, Walsh and Green",
+            "model": "art",
+            "license_plate": "TWF-355",
+            "vehicle_status": 8
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 9,
+        "fields": {
+            "owner": 9,
+            "make": "Perez, Morgan and Huff",
+            "model": "defense",
+            "license_plate": "14-58466",
+            "vehicle_status": 9
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 10,
+        "fields": {
+            "owner": 10,
+            "make": "Lopez PLC",
+            "model": "control",
+            "license_plate": "272-LWR",
+            "vehicle_status": 10
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 11,
+        "fields": {
+            "owner": 11,
+            "make": "Washington and Sons",
+            "model": "case",
+            "license_plate": "2YP R98",
+            "vehicle_status": 11
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 12,
+        "fields": {
+            "owner": 12,
+            "make": "Lewis and Sons",
+            "model": "position",
+            "license_plate": "0-73100I",
+            "vehicle_status": 12
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 13,
+        "fields": {
+            "owner": 13,
+            "make": "Armstrong Inc",
+            "model": "individual",
+            "license_plate": "A77-ICF",
+            "vehicle_status": 13
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 14,
+        "fields": {
+            "owner": 14,
+            "make": "Nelson-Macdonald",
+            "model": "daughter",
+            "license_plate": "581 7675",
+            "vehicle_status": 14
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 15,
+        "fields": {
+            "owner": 15,
+            "make": "Kemp LLC",
+            "model": "region",
+            "license_plate": "074 EDX",
+            "vehicle_status": 15
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 16,
+        "fields": {
+            "owner": 16,
+            "make": "Wong, Washington and Delgado",
+            "model": "generation",
+            "license_plate": "8MX5821",
+            "vehicle_status": 16
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 17,
+        "fields": {
+            "owner": 17,
+            "make": "Morgan, Brown and Brown",
+            "model": "blue",
+            "license_plate": "BUZ 1986",
+            "vehicle_status": 17
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 18,
+        "fields": {
+            "owner": 18,
+            "make": "Monroe and Sons",
+            "model": "free",
+            "license_plate": "R97-39R",
+            "vehicle_status": 18
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 19,
+        "fields": {
+            "owner": 19,
+            "make": "Payne Group",
+            "model": "recently",
+            "license_plate": "166 UPB",
+            "vehicle_status": 19
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 20,
+        "fields": {
+            "owner": 20,
+            "make": "Boyd-Parks",
+            "model": "say",
+            "license_plate": "OC 0561",
+            "vehicle_status": 20
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 21,
+        "fields": {
+            "owner": 21,
+            "make": "Dawson, Walker and Lawson",
+            "model": "would",
+            "license_plate": "7-2723G",
+            "vehicle_status": 21
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 22,
+        "fields": {
+            "owner": 22,
+            "make": "Diaz, Cunningham and Bowman",
+            "model": "anyone",
+            "license_plate": "KBQ 858",
+            "vehicle_status": 22
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 23,
+        "fields": {
+            "owner": 23,
+            "make": "Roberson-Wells",
+            "model": "attention",
+            "license_plate": "EPF 342",
+            "vehicle_status": 23
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 24,
+        "fields": {
+            "owner": 24,
+            "make": "Mendez, Kent and Taylor",
+            "model": "price",
+            "license_plate": "271-GII",
+            "vehicle_status": 24
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 25,
+        "fields": {
+            "owner": 25,
+            "make": "Glover Group",
+            "model": "budget",
+            "license_plate": "YCJ-047",
+            "vehicle_status": 25
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 26,
+        "fields": {
+            "owner": 26,
+            "make": "Nguyen-Parks",
+            "model": "write",
+            "license_plate": "023-FXD",
+            "vehicle_status": 26
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 27,
+        "fields": {
+            "owner": 27,
+            "make": "Mcdowell PLC",
+            "model": "customer",
+            "license_plate": "I61 7AS",
+            "vehicle_status": 27
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 28,
+        "fields": {
+            "owner": 28,
+            "make": "Grimes and Sons",
+            "model": "pass",
+            "license_plate": "UHX 561",
+            "vehicle_status": 28
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 29,
+        "fields": {
+            "owner": 29,
+            "make": "Russell, Wise and Peters",
+            "model": "teach",
+            "license_plate": "9K 1H2XBB",
+            "vehicle_status": 29
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 30,
+        "fields": {
+            "owner": 30,
+            "make": "Brown-Walker",
+            "model": "keep",
+            "license_plate": "48BT3",
+            "vehicle_status": 30
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 31,
+        "fields": {
+            "owner": 31,
+            "make": "Gay-Anderson",
+            "model": "law",
+            "license_plate": "TVJ S39",
+            "vehicle_status": 31
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 32,
+        "fields": {
+            "owner": 32,
+            "make": "Anderson Group",
+            "model": "inside",
+            "license_plate": "384 UDI",
+            "vehicle_status": 32
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 33,
+        "fields": {
+            "owner": 33,
+            "make": "Perez-Hughes",
+            "model": "picture",
+            "license_plate": "360 QTU",
+            "vehicle_status": 33
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 34,
+        "fields": {
+            "owner": 34,
+            "make": "Graham, Kerr and Blevins",
+            "model": "still",
+            "license_plate": "534 GYC",
+            "vehicle_status": 34
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 35,
+        "fields": {
+            "owner": 35,
+            "make": "King Ltd",
+            "model": "cold",
+            "license_plate": "2GGT 84",
+            "vehicle_status": 35
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 36,
+        "fields": {
+            "owner": 36,
+            "make": "Diaz, Chambers and Glass",
+            "model": "important",
+            "license_plate": "1U114",
+            "vehicle_status": 36
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 37,
+        "fields": {
+            "owner": 37,
+            "make": "Moreno, Willis and Riley",
+            "model": "continue",
+            "license_plate": "ESM G37",
+            "vehicle_status": 37
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 38,
+        "fields": {
+            "owner": 38,
+            "make": "Smith Ltd",
+            "model": "certain",
+            "license_plate": "IQQ 304",
+            "vehicle_status": 38
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 39,
+        "fields": {
+            "owner": 39,
+            "make": "Wheeler Ltd",
+            "model": "develop",
+            "license_plate": "DPL-1341",
+            "vehicle_status": 39
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 40,
+        "fields": {
+            "owner": 40,
+            "make": "Schmidt-Smith",
+            "model": "instead",
+            "license_plate": "8ON6971",
+            "vehicle_status": 40
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 41,
+        "fields": {
+            "owner": 41,
+            "make": "Gill, Simon and Ryan",
+            "model": "campaign",
+            "license_plate": "266-JJE",
+            "vehicle_status": 41
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 42,
+        "fields": {
+            "owner": 42,
+            "make": "Alexander, Nichols and Cooke",
+            "model": "summer",
+            "license_plate": "9RY H26",
+            "vehicle_status": 42
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 43,
+        "fields": {
+            "owner": 43,
+            "make": "Bass PLC",
+            "model": "wish",
+            "license_plate": "B43 6TF",
+            "vehicle_status": 43
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 44,
+        "fields": {
+            "owner": 44,
+            "make": "Short-Smith",
+            "model": "teacher",
+            "license_plate": "EK 17052",
+            "vehicle_status": 44
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 45,
+        "fields": {
+            "owner": 45,
+            "make": "Velazquez-Bush",
+            "model": "do",
+            "license_plate": "0A ON981",
+            "vehicle_status": 45
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 46,
+        "fields": {
+            "owner": 46,
+            "make": "Cisneros Group",
+            "model": "surface",
+            "license_plate": "V19 7SE",
+            "vehicle_status": 46
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 47,
+        "fields": {
+            "owner": 47,
+            "make": "Smith-Durham",
+            "model": "recognize",
+            "license_plate": "SJK 844",
+            "vehicle_status": 47
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 48,
+        "fields": {
+            "owner": 48,
+            "make": "Lucas, Taylor and Huber",
+            "model": "film",
+            "license_plate": "IQY-243",
+            "vehicle_status": 48
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 49,
+        "fields": {
+            "owner": 49,
+            "make": "Greene-Cook",
+            "model": "yes",
+            "license_plate": "13-Q245",
+            "vehicle_status": 49
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 50,
+        "fields": {
+            "owner": 50,
+            "make": "Jimenez-Mullins",
+            "model": "marriage",
+            "license_plate": "308XRV",
+            "vehicle_status": 50
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 1,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 2,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 3,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 4,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 5,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 6,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 7,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 8,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 9,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 10,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 11,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 12,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 13,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 14,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 15,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 16,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 17,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 18,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 19,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 20,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 21,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 22,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 23,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 24,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 25,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 26,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 27,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 28,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 29,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 30,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 31,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 32,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 33,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 34,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 35,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 36,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 37,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 38,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 39,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 40,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 41,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 42,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 43,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 44,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 45,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 46,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 47,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 48,
+        "fields": {
+            "status": "out"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 49,
+        "fields": {
+            "status": "in"
+        }
+    },
+    {
+        "model": "core.vehiclestatus",
+        "pk": 50,
+        "fields": {
+            "status": "out"
+        }
+    }
+]

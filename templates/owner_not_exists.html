@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %}
+<div>{% include "components/header.html" %}</div>
+<div class="py-10 px-20">
+  <div class="flex items-center">
+    <div class="w-10 h-10 mr-4">
+      <svg
+        fill="#ff0000"
+        viewBox="0 0 1920 1920"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm-9.838 1342.685c-84.47 0-153.19 68.721-153.19 153.19 0 84.47 68.72 153.192 153.19 153.192s153.19-68.721 153.19-153.191-68.72-153.19-153.19-153.19ZM1153.658 320H746.667l99.118 898.623h208.755L1153.658 320Z"
+            fill-rule="evenodd"
+          ></path>
+        </g>
+      </svg>
+    </div>
+    <h2
+      class="font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
+    >
+      User not exist in the database
+    </h2>
+  </div>
+  <div
+    class="ml-4 px-10 mt-3"
+    x-data="{ redirect() { setTimeout(() => { window.location.href = '/'; }, 3000) } }"
+    x-init="redirect()"
+  >
+    <div
+      class="leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900"
+    >
+      You will be redirected in 3 seconds...
+    </div>
+  </div>
+</div>
+{% endblock content%}

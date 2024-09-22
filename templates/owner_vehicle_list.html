@@ -1,0 +1,61 @@
+
+
+{% extends "base.html" %} {% load static %} {% block content %}
+<div>
+  <div>{% include "components/header.html" %}</div>
+  <div>
+  <h1 class="text-center font-medium text-gray-600">
+  List of Owner/Vehicles
+  </h1></div>
+  <div class="mt-10">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3">Owner Name</th>
+            <th scope="col" class="px-6 py-3">Car Model</th>
+            <th scope="col" class="px-6 py-3">License Plate</th>
+            <th scope="col" class="px-6 py-3">Status</th>
+            <th scope="col" class="px-6 py-3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for car in cars %}
+          
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium whitespace-nowrap text-gray-600 flex items-center"
+            >
+            <div class="w-10 h-10 overflow-hidden mr-3 rounded-full border">
+            {% if car.owner.profile %}
+            <img
+                class="w-full h-full"
+                src="{{car.owner.profile_photo.url}}"
+                alt="profile photo"
+              />
+              {% else %}
+                  <img src="{% static 'images/default_img.jpg' %}" alt="No image available"  class="w-full h-full">
+      
+              {% endif %}
+            </div>
+              {{car.owner.first_name}} {{car.owner.last_name}}
+            </th>
+            <td class="px-6 py-4 font-medium text-gray-600">{{car.model}}</td>
+            <td class="px-6 py-4 font-medium text-gray-600">{{car.license_plate}}</td>
+            <td class="px-6 py-4 font-medium text-gray-600">{{car.vehicle_status.status|upper}}</td>
+            <td class="px-6 py-4 font-medium text-gray-600">
+              <a href="{% url 'owner-vehicle-detail' car.owner.pk car.pk %}" class="font-medium text-blue-600 hover:underline"
+                >View</a
+              >
+            </td>
+            </tr>
+     
+
+        {%endfor%}
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock content %}
