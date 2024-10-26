@@ -11,4 +11,5 @@ def list_serial_ports():
         }
         list.append(dict)
 
+
     return list

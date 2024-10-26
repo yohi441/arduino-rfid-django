@@ -5,13 +5,15 @@ from .views.register import RegisterPageView, RegisterDetailView
 from .views.htmx_views.htmx_utils_views import check_database, get_rfid, get_rfid_in_home, get_vehicle_status, get_form_owner_update, get_form_car_update, update_status
 from .views.vehicle import VehiclePageView
 from .views.owner_vehicle_list import OwnerVehicleListView, OwnerVehicleDetailView
+from .views.view_logs import OwnerLogsView
 urlpatterns = [
     path('', HomePageView.as_view(), name="home-page"),
     path('register/', RegisterPageView.as_view(), name="register-page"),
     path("check-in/vehicle/<str:data>/", VehiclePageView.as_view() , name="vehicle-detail-view"),
     path('register/rfid/<str:data>/', RegisterDetailView.as_view(), name="register-rfid"),
     path('owner/vehicle/list/', OwnerVehicleListView.as_view(), name="owner-vehicle-list"),
-    path("owner/vehicle/detail/<int:pk>/<int:car_pk>/", OwnerVehicleDetailView.as_view(), name="owner-vehicle-detail")
+    path("owner/vehicle/detail/<int:pk>/<int:car_pk>/", OwnerVehicleDetailView.as_view(), name="owner-vehicle-detail"),
+    path("owner/logs/<int:pk>/", OwnerLogsView.as_view(), name="owner-logs")
 ]
 
 htmx_urlpatterns = [

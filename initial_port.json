@@ -1,0 +1,10 @@
+[
+    {
+      "model": "core.serialportconfiguration",
+      "pk": 1,
+      "fields": {
+        "port": "COM1"
+      }
+    }
+  ]
+  

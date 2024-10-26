@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class SiteInfo(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+
 class SerialPortConfiguration(models.Model):
     port = models.CharField(blank=True, null=True, max_length=10)
 
@@ -41,3 +49,14 @@ class VehicleStatus(models.Model):
     
     def __str__(self):
         return self.status
+    
+class VehicleLog(models.Model):
+    """Model to track vehicle entries and exits"""
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, related_name='logs')
+    time_in = models.DateTimeField(blank=True, null=True)
+    time_out = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.car} - {self.time_out}"
+    
+

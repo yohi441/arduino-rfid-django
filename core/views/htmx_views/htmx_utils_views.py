@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from core.models import SerialPortConfiguration
-from core.models import Owner, Car, VehicleStatus
+from core.models import Owner, Car, VehicleStatus, VehicleLog
 from core.forms import OwnerForm, CarForm
 from django.urls import reverse
 import serial
 from django.shortcuts import redirect
 from django.http import JsonResponse, HttpResponse
 from django.contrib import messages
+from django.utils import timezone
+import time
 
 htmx_dir = "htmx_partials/"
 
@@ -61,7 +63,7 @@ def get_rfid_in_home(request):
     except Exception as e:
         pass
     finally:
-        if ser:
+        if ser is not None:
             ser.close()
 
     context = {
@@ -133,11 +135,22 @@ def get_form_car_update(request, owner_pk, car_pk):
         return render(request, f"{htmx_dir}form_car_update.html", {"form":form, "owner_pk": owner_pk, "car_pk": car_pk})
     
 def update_status(request, status, car_pk):
-    current_status = status
     car = Car.objects.get(id=car_pk)
+    vl = VehicleLog.objects.filter(car=car).order_by("time_out").first()
+    
     vs = VehicleStatus.objects.get(car=car)
     vs.status = status
+    if not vl.time_out:
+        if vs.status == "in":
+            vl.time_in = timezone.now()
+        if vs.status == "out":
+            vl.time_out = timezone.now()
+    else:
+        vl = VehicleLog.objects.create(car=car)
+        if vs.status == "in":
+            vl.time_in = timezone.now()
     vs.save()
+    vl.save()
     car = Car.objects.get(id=car_pk)
     context = {
         "car": car

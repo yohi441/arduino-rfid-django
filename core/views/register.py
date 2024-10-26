@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from core.models import Owner, Car, VehicleStatus
+from core.models import Owner, Car, VehicleStatus, VehicleLog
 from django.http.response import HttpResponse
 from core.forms import VehicleRegisterForm
 from core.models import SerialPortConfiguration
@@ -8,6 +8,7 @@ from core.utils import list_serial_ports
 from django.db import IntegrityError
 from django.db import transaction
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def extract_unique_field_name(error_message):
     # Logic to extract field name from the error message
@@ -17,7 +18,7 @@ def extract_unique_field_name(error_message):
         return error_message.split('.')[-1].strip()
     return "Unknown field"
 
-class RegisterPageView(View):
+class RegisterPageView(LoginRequiredMixin, View):
 
     def get(self, request):
         port = SerialPortConfiguration.objects.first()
@@ -63,6 +64,7 @@ class RegisterDetailView(View):
             vehicle_status = vehicle_status
             )
         car.save()
+        return car
 
     def get(self, request, data):
         form = VehicleRegisterForm()
@@ -104,7 +106,8 @@ class RegisterDetailView(View):
                 with transaction.atomic():
                     owner_instance = self.owner_data_save(owner)
                     vs = VehicleStatus.objects.create()
-                    self.car_data_save(data=car, owner=owner_instance, vehicle_status=vs)
+                    car = self.car_data_save(data=car, owner=owner_instance, vehicle_status=vs)
+                    VehicleLog.objects.create(car=car)
                 messages.success(request, "Your data was saved successfully!")
             except IntegrityError as e:
                 # Check if the error is related to a UNIQUE constraint

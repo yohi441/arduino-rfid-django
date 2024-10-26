@@ -1,0 +1,152 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div>{% include "components/header.html" %}</div>
+<div class="w-1/4">
+  <form
+    method="GET"
+    action=""
+    class="flex flex-col space-y-4 p-4 bg-white rounded-lg shadow-md"
+  >
+    <label for="start_date" class="text-gray-700 font-medium"
+      >Filter by Date:</label
+    >
+    <input
+      type="date"
+      id="start_date"
+      name="date"
+      required
+      class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    <button
+      type="submit"
+      class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
+    >
+      Filter
+    </button>
+  </form>
+  <a href="{% url 'owner-logs' owner.pk %}">
+    <button
+      type="submit"
+      class="bg-blue-500 mt-10 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
+    >
+      View all
+    </button>
+  </a>
+</div>
+
+<div class="mt-10">
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3">Time In</th>
+          <th scope="col" class="px-6 py-3">Time Out</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for vl in logs%}
+        <tr class="bg-white border-b hover:bg-gray-50">
+          <td class="px-6 py-4">{{ vl.time_in}}</td>
+          <td class="px-6 py-4">{{ vl.time_out}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-center mt-6 mb-16">
+    <nav aria-label="Page navigation example">
+      <ul class="inline-flex -space-x-px text-sm">
+        <!-- check if has previous page -->
+        {% if logs.has_previous %}
+        <li>
+          <a
+            href="?page=1"
+            class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700"
+            >First</a
+          >
+        </li>
+        <li>
+          <a
+            href="?page={{ logs.previous_page_number }}"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            >Previous</a
+          >
+        </li>
+        {% endif %}
+        <!-- loop of page numbers -->
+        {% for num in logs.paginator.page_range %}
+        <!-- this is to limit the page number shown -->
+        {% if logs.paginator.num_pages > 5 %}
+        <!---->
+        {% if num >= logs.number|add:-2 and num <= logs.number|add:2 %}
+        <!-- check current number is same as page -->
+        {% if num == logs.number %}
+        <li>
+          <p
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+          >
+            <strong>{{ num }}</strong>
+          </p>
+        </li>
+        {% else %}
+        <li>
+          <a
+            href="?page={{ num }}"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            >{{ num }}</a
+          >
+        </li>
+        {% endif %}
+        <!-- end of if current page -->
+
+        {% endif %}
+        <!---->
+        {% else %}
+        <!---->
+        {% if num == logs.number %}
+        <li>
+          <p
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+          >
+            <strong>{{ num }}</strong>
+          </p>
+        </li>
+        {% else %}
+        <li>
+          <a
+            href="?page={{ num }}"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            >{{ num }}</a
+          >
+        </li>
+        {% endif %}
+        <!---->
+        {% endif %}
+
+        <!-- endif of the limit -->
+        {% endfor %}
+        <!-- end of loop -->
+        <!-- check if has next page -->
+        {% if logs.has_next %}
+        <li>
+          <a
+            href="?page={{ logs.next_page_number }}"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+            >Next</a
+          >
+        </li>
+        <li>
+          <a
+            href="?page={{ logs.paginator.num_pages }}"
+            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
+            >Last</a
+          >
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endblock %}
