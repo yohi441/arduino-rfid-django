@@ -79,6 +79,34 @@ def get_rfid_in_home(request):
     
     return render(request, f"{htmx_dir}rfid_partials_home.html", context)
 
+def get_rfid_in_change(request, pk):
+    port_config = SerialPortConfiguration.objects.first()
+    port = port_config.port
+    data = "no data found"
+    ser = None
+   
+    try:
+        ser = serial.Serial(port, 9600)
+        data = ser.readline().decode('utf-8').strip()
+        ser.close()
+    except Exception as e:
+        pass
+    finally:
+        if ser is not None:
+            ser.close()
+
+    context = {
+        "data": data
+    }
+    if data != "no data found":
+        response =  JsonResponse({
+            "message": "Redirecting"
+        })
+        redirect_url = reverse('rfid-view', args=[data, pk])
+        response['HX-Redirect'] = redirect_url 
+        return response
+    return render(request, f"{htmx_dir}rfid_partials_home.html", context)
+
 def get_vehicle_status(request, data):
     print(data)
     # split_uid = data.split(":")
