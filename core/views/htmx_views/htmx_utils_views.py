@@ -12,8 +12,9 @@ import time
 
 htmx_dir = "htmx_partials/"
 
+
 def check_database(request, data):
-    
+
     rfid = data.strip()
     exists = Owner.objects.filter(rfid=rfid).exists()
     if not exists:
@@ -24,6 +25,7 @@ def check_database(request, data):
         print("rfid exist in the database")
     return render(request, f"{htmx_dir}sample.html", {})
 
+
 def get_rfid(request):
     port_config = SerialPortConfiguration.objects.first()
     port = port_config.port
@@ -31,25 +33,22 @@ def get_rfid(request):
     ser = None
     try:
         ser = serial.Serial(port, 9600)
-        data = ser.readline().decode('utf-8').strip()
+        data = ser.readline().decode("utf-8").strip()
         ser.close()
     except Exception as e:
         print("Invalid Serial Port", e)
     finally:
         if ser:
             ser.close()
-    context = {
-        "data": data
-    }
+    context = {"data": data}
     if data != "no data found":
-        response =  JsonResponse({
-            "message": "Redirecting"
-        })
-        redirect_url = reverse('register-rfid', args=[data])
-        response['HX-Redirect'] = redirect_url 
+        response = JsonResponse({"message": "Redirecting"})
+        redirect_url = reverse("register-rfid", args=[data])
+        response["HX-Redirect"] = redirect_url
         return response
-    
+
     return render(request, f"{htmx_dir}rfid_partials.html", context)
+
 
 def get_rfid_in_home(request):
     port_config = SerialPortConfiguration.objects.first()
@@ -58,7 +57,7 @@ def get_rfid_in_home(request):
     ser = None
     try:
         ser = serial.Serial(port, 9600)
-        data = ser.readline().decode('utf-8').strip()
+        data = ser.readline().decode("utf-8").strip()
         ser.close()
     except Exception as e:
         pass
@@ -66,28 +65,25 @@ def get_rfid_in_home(request):
         if ser is not None:
             ser.close()
 
-    context = {
-        "data": data
-    }
+    context = {"data": data}
     if data != "no data found":
-        response =  JsonResponse({
-            "message": "Redirecting"
-        })
-        redirect_url = reverse('vehicle-detail-view', args=[data])
-        response['HX-Redirect'] = redirect_url 
+        response = JsonResponse({"message": "Redirecting"})
+        redirect_url = reverse("vehicle-detail-view", args=[data])
+        response["HX-Redirect"] = redirect_url
         return response
-    
+
     return render(request, f"{htmx_dir}rfid_partials_home.html", context)
+
 
 def get_rfid_in_change(request, pk):
     port_config = SerialPortConfiguration.objects.first()
     port = port_config.port
     data = "no data found"
     ser = None
-   
+
     try:
         ser = serial.Serial(port, 9600)
-        data = ser.readline().decode('utf-8').strip()
+        data = ser.readline().decode("utf-8").strip()
         ser.close()
     except Exception as e:
         pass
@@ -95,17 +91,14 @@ def get_rfid_in_change(request, pk):
         if ser is not None:
             ser.close()
 
-    context = {
-        "data": data
-    }
+    context = {"data": data}
     if data != "no data found":
-        response =  JsonResponse({
-            "message": "Redirecting"
-        })
-        redirect_url = reverse('rfid-view', args=[data, pk])
-        response['HX-Redirect'] = redirect_url 
+        response = JsonResponse({"message": "Redirecting"})
+        redirect_url = reverse("rfid-view", args=[data, pk])
+        response["HX-Redirect"] = redirect_url
         return response
     return render(request, f"{htmx_dir}rfid_partials_home.html", context)
+
 
 def get_vehicle_status(request, data):
     print(data)
@@ -128,44 +121,58 @@ def get_form_owner_update(request, owner_pk, car_pk):
     owner = Owner.objects.get(id=owner_pk)
     if request.method == "GET":
         form = OwnerForm(instance=owner)
-        return render(request, f"{htmx_dir}form_owner_update.html", {"form":form, "owner_pk": owner_pk, "car_pk": car_pk })
+        return render(
+            request,
+            f"{htmx_dir}form_owner_update.html",
+            {"form": form, "owner_pk": owner_pk, "car_pk": car_pk},
+        )
     elif request.method == "POST":
         form = OwnerForm(request.POST, request.FILES, instance=owner)
         if form.is_valid():
             form.save()
-            response =  JsonResponse({
-                "message": "Redirecting"
-            })
-            redirect_url = reverse('owner-vehicle-detail', args=[owner_pk, car_pk])
-            response['HX-Redirect'] = redirect_url
+            response = JsonResponse({"message": "Redirecting"})
+            redirect_url = reverse("owner-vehicle-detail", args=[owner_pk, car_pk])
+            response["HX-Redirect"] = redirect_url
             messages.success(request, "Owner Information Updated")
             return response
-        return render(request, f"{htmx_dir}form_owner_update.html", {"form":form, "owner_pk": owner_pk, "car_pk": car_pk})
-    
+        return render(
+            request,
+            f"{htmx_dir}form_owner_update.html",
+            {"form": form, "owner_pk": owner_pk, "car_pk": car_pk},
+        )
+
+
 def get_form_car_update(request, owner_pk, car_pk):
     car = Car.objects.get(id=car_pk)
     if request.method == "GET":
         form = CarForm(instance=car)
-        return render(request, f"{htmx_dir}form_car_update.html", {"form":form, "owner_pk": owner_pk, "car_pk": car_pk })
+        return render(
+            request,
+            f"{htmx_dir}form_car_update.html",
+            {"form": form, "owner_pk": owner_pk, "car_pk": car_pk},
+        )
     elif request.method == "POST":
         form = CarForm(request.POST, request.FILES, instance=car)
         print(request.POST)
         print(request.FILES)
         if form.is_valid():
             form.save()
-            response =  JsonResponse({
-                "message": "Redirecting"
-            })
-            redirect_url = reverse('owner-vehicle-detail', args=[owner_pk, car_pk])
-            response['HX-Redirect'] = redirect_url
+            response = JsonResponse({"message": "Redirecting"})
+            redirect_url = reverse("owner-vehicle-detail", args=[owner_pk, car_pk])
+            response["HX-Redirect"] = redirect_url
             messages.success(request, "Vehicle Information Updated")
             return response
-        return render(request, f"{htmx_dir}form_car_update.html", {"form":form, "owner_pk": owner_pk, "car_pk": car_pk})
-    
+        return render(
+            request,
+            f"{htmx_dir}form_car_update.html",
+            {"form": form, "owner_pk": owner_pk, "car_pk": car_pk},
+        )
+
+
 def update_status(request, status, car_pk):
     car = Car.objects.get(id=car_pk)
     vl = VehicleLog.objects.filter(car=car).order_by("time_out").first()
-    
+
     vs = VehicleStatus.objects.get(car=car)
     vs.status = status
     if not vl.time_out:
@@ -180,9 +187,6 @@ def update_status(request, status, car_pk):
     vs.save()
     vl.save()
     car = Car.objects.get(id=car_pk)
-    context = {
-        "car": car
-    }
-   
+    context = {"car": car}
+
     return render(request, f"{htmx_dir}update_button_partials_in.html", context)
-   

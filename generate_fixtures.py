@@ -4,6 +4,7 @@ import random
 
 fake = Faker()
 
+
 def generate_owners_and_related_data(num_owners):
     owners = []
     cars = []
@@ -21,7 +22,7 @@ def generate_owners_and_related_data(num_owners):
                 "email": fake.email(),
                 "phone_number": fake.phone_number(),
                 # Optionally add profile_photo if needed
-            }
+            },
         }
         owners.append(owner)
 
@@ -31,7 +32,7 @@ def generate_owners_and_related_data(num_owners):
             "pk": i,  # Use the same ID as the car to ensure a one-to-one relationship
             "fields": {
                 "status": random.choice(["in", "out"]),
-            }
+            },
         }
         statuses.append(status)
 
@@ -46,11 +47,12 @@ def generate_owners_and_related_data(num_owners):
                 "license_plate": fake.license_plate(),
                 "vehicle_status": i,  # Reference to the vehicle status
                 # Optionally add photo if needed
-            }
+            },
         }
         cars.append(car)
 
     return owners, cars, statuses
+
 
 def main():
     num_owners = 50
@@ -61,8 +63,9 @@ def main():
     data = owners + cars + statuses
 
     # Write to a JSON file
-    with open('initial_data.json', 'w') as f:
+    with open("initial_data.json", "w") as f:
         json.dump(data, f, indent=4)
+
 
 if __name__ == "__main__":
     main()

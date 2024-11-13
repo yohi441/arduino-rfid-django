@@ -21,7 +21,7 @@
         </thead>
         <tbody>
         {% for car in cars %}
-          
+
             <th
               scope="row"
               class="px-6 py-4 font-medium whitespace-nowrap text-gray-600 flex items-center"
@@ -35,7 +35,7 @@
               />
               {% else %}
                   <img src="{% static 'images/default_img.jpg' %}" alt="No image available"  class="w-full h-full">
-      
+
               {% endif %}
             </div>
               {{car.owner.first_name}} {{car.owner.last_name}}
@@ -49,7 +49,7 @@
               >
             </td>
             </tr>
-     
+
 
         {%endfor%}
 
@@ -58,7 +58,7 @@
 
     </div>
     <div>
-    
+
     </div>
     <div class="flex justify-center mt-6 mb-16">
       <nav aria-label="Page navigation example">
@@ -68,9 +68,9 @@
           <li>
             <a href="?page={{ cars.previous_page_number }}" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">Previous</a>
           </li>
-         
+
         {% endif %}
-        
+
          {% for num in cars.paginator.page_range %}
          {% if cars.paginator.num_pages > 5 %}
             {% if num >= cars.number|add:-2 and num <= cars.number|add:2 %}
@@ -93,8 +93,8 @@
             </li>
             {% endif %}
          {% endif %}
-         
-        {% endfor %} 
+
+        {% endfor %}
         {% if cars.has_next %}
          <li>
           <a href="?page={{ cars.next_page_number }}" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">Next</a>

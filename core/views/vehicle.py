@@ -10,17 +10,15 @@ from django.utils import timezone
 
 
 class VehiclePageView(LoginRequiredMixin, View):
-    
     def get(self, request, data):
         exists = Owner.objects.filter(rfid=data).exists()
-   
-        
+
         if exists:
             owner = Owner.objects.get(rfid=data)
             car = Car.objects.filter(owner=owner).first()
             vl = VehicleLog.objects.filter(car=car).order_by("time_out").first()
             vs = VehicleStatus.objects.get(car=car)
-            
+
             status = vs.status
             if status == "in":
                 vs.status = "out"
@@ -37,11 +35,11 @@ class VehiclePageView(LoginRequiredMixin, View):
                 if vs.status == "in":
                     vl.time_in = timezone.now()
             vl.save()
-           
+
             context = {
                 "owner": owner,
                 "car": car,
-                        # "status": status
+                # "status": status
             }
             return render(request, "vehicle_view.html", context)
         else:

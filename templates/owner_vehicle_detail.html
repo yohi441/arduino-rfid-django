@@ -1,7 +1,7 @@
 
 
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 {% block content %}
 <div>{% include "components/header.html" %}</div>
 
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  
+
   <div class="w-full font-medium text-gray-600">
     <form hx-target="this" hx-swap="outerHTML" action="" class="space-y-2">
       <div class="">First Name: {{owner.first_name|title}}</div>
@@ -45,7 +45,7 @@
       </div>
     </form>
   </div>
- 
+
 </div>
 <div class="ml-10 mt-10 mb-2 font-medium text-gray-600">
   Vehicle Information
@@ -54,7 +54,7 @@
 <div class="flex py-10 rounded-md border">
   <div class="w-full">
     <div class="h-60 w-60 mx-auto rounded-lg overflow-hidden border">
-    
+
       {% if car_img_url %}
       <img
           class="h-60 w-60"
@@ -65,7 +65,7 @@
             <img src="{% static 'images/default_img.jpg' %}" alt="No image available"  class="h-[200px] w-auto mx-auto">
             <div class="text-center">No Image Found</div>
         {% endif %}
-      
+
     </div>
   </div>
   <div class="w-full font-medium text-gray-600">

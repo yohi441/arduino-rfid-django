@@ -6,10 +6,9 @@ def list_serial_ports():
     list = []
     for port in ports:
         dict = {
-            "port" : port.device,
-            "description":f"Port: {port.device}, Description: {port.description}"
+            "port": port.device,
+            "description": f"Port: {port.device}, Description: {port.description}",
         }
         list.append(dict)
-
 
     return list

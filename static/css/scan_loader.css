@@ -6,7 +6,7 @@
     background: #fff;
     animation: wave 1s ease-in infinite;
   }
-  
+
   @keyframes wave {
    0% {  box-shadow:
     0 0 0 0px rgba(255, 255,255, 1),
@@ -23,6 +23,3 @@
       0 0 0 0px rgba(255, 255,255, 1)
     }
   }
-  
-  
-    
