@@ -97,7 +97,7 @@ def get_rfid_in_change(request, pk):
         redirect_url = reverse("rfid-view", args=[data, pk])
         response["HX-Redirect"] = redirect_url
         return response
-    return render(request, f"{htmx_dir}rfid_partials_home.html", context)
+    return render(request, f"{htmx_dir}rfid_change.html", context)
 
 
 def get_vehicle_status(request, data):

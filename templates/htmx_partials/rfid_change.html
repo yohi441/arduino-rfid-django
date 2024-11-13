@@ -1,0 +1,5 @@
+<div
+hx-get="{% url 'get-rfid-change' request.resolver_match.kwargs.pk %}"
+hx-trigger="every 1s"
+hx-swap="outerHTML"
+></div>
